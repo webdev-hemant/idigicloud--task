@@ -1,55 +1,6 @@
-import React, { lazy } from "react";
-import { Routes, Route, Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { routeData } from "constants/routesData";
-import CommonComponent from "components/CommonComponent";
-
-const renderRoutes = (routes: any) => (
-  <Routes>
-    {routes.map((route: any, i: any) => {
-      const Component = lazy(() => import(`./${route.component}`));
-      // if (route.redirect) {
-      //   return <Navigate key={i} to={route.redirect} />;
-      // }
-      // else
-      if (route.routes) {
-        return (
-          <Route
-            key={i}
-            path={route.path}
-            element={
-              <React.Suspense fallback={<h1>Loading...</h1>}>
-                <CommonComponent>
-                  {console.log("hiiiiii", route.routes)}
-                  {renderRoutes(route.routes)}
-                  <Component {...route} />
-                </CommonComponent>
-              </React.Suspense>
-            }
-            // element={
-            //   <route.component>{renderRoutes(route.routes)}</route.component>
-            // }
-          />
-        );
-      } else {
-        console.log(route.path);
-        return (
-          <Route
-            key={i}
-            path={route.path}
-            element={
-              <React.Suspense fallback={<h1>Loading...</h1>}>
-                <CommonComponent>
-                  <Component {...route} />
-                </CommonComponent>
-              </React.Suspense>
-            }
-            // element={<route.component routes={route.routes} />}
-          />
-        );
-      }
-    })}
-  </Routes>
-);
+import RenderRoutes from "renderRoutes";
 
 const App = () => (
   <div>
@@ -66,7 +17,7 @@ const App = () => (
         </li>
       </ul>
     </nav>
-    {renderRoutes(routeData)}
+    {RenderRoutes(routeData)}
   </div>
 );
 
