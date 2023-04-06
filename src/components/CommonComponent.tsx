@@ -7,6 +7,7 @@ const CommonComponent = ({ children }: any) => {
   return (
     <>
       {children}
+      <h1>{children.props.name}</h1>
       <div>CommonComponent</div>
     </>
   );

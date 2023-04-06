@@ -13,13 +13,13 @@ export const routeData = [
     icon: "dashboard",
     exact: true, // This route will only work for /dashboard . For
     //dashboard/analysis or other this component will not be rendered
-    component: "modules/UserModule/Login",
+    component: "modules/DashboardModule",
     routes: [
       {
         path: "/dashboard/analysis",
         locale: "dashboard.analysis",
         name: "analysis",
-        component: "modules/UserModule/Login",
+        component: "modules/DashboardModule/Analysis",
         exact: true,
         accessTO: ["admin"], // Allow only admins to view this menu
         //and access this page
@@ -27,14 +27,14 @@ export const routeData = [
       {
         path: "/dashboard/monitor",
         locale: "dashboard.monitor",
-        component: "modules/UserModule/Login",
+        component: "modules/DashboardModule/Monitor",
         name: "monitor",
         exact: true,
       },
       {
         path: "/dashboard/workplace",
         locale: "dashboard.workplace",
-        component: "modules/UserModule/Login",
+        component: "modules/DashboardModule/Workplace",
         name: "workplace",
         exact: true,
       },

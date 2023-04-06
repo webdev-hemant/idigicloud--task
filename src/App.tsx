@@ -15,6 +15,9 @@ const App = () => (
         <li>
           <Link to="/projects">Projects</Link>
         </li>
+        <li>
+          <Link to="/dashboard/analysis">Analysis</Link>
+        </li>
       </ul>
     </nav>
     {RenderRoutes(routeData)}
