@@ -1,4 +1,4 @@
-export const routeData = [
+export const routeDataBackup = [
   {
     name: "Login",
     locale: "user.login",
@@ -13,13 +13,13 @@ export const routeData = [
     icon: "dashboard",
     exact: true, // This route will only work for /dashboard . For
     //dashboard/analysis or other this component will not be rendered
-    component: "modules/UserModule/Login",
+    component: "pages/dashboard",
     routes: [
       {
         path: "/dashboard/analysis",
         locale: "dashboard.analysis",
         name: "analysis",
-        component: "modules/UserModule/Login",
+        component: "pages/dashboard/analysis",
         exact: true,
         accessTO: ["admin"], // Allow only admins to view this menu
         //and access this page
@@ -27,14 +27,14 @@ export const routeData = [
       {
         path: "/dashboard/monitor",
         locale: "dashboard.monitor",
-        component: "modules/UserModule/Login",
+        component: "pages/dashboard/monitor",
         name: "monitor",
         exact: true,
       },
       {
         path: "/dashboard/workplace",
         locale: "dashboard.workplace",
-        component: "modules/UserModule/Login",
+        component: "pages/dashboard/workplace",
         name: "workplace",
         exact: true,
       },
@@ -45,7 +45,6 @@ export const routeData = [
     locale: "projects",
     name: "Projects",
     icon: "projects",
-    component: "modules/UserModule/Login",
     redirect: "/projects/list", //Redirect /projects to
     ///projects/list
     routes: [
@@ -77,6 +76,6 @@ export const routeData = [
   },
   // {
   //   path: "*",
-  // component: "modules/UserModule/Login",
+  //   component: "./404",
   // },
 ];
