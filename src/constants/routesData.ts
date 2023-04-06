@@ -1,4 +1,4 @@
-[
+export const routeData = [
   {
     name: "Login",
     locale: "user.login",
