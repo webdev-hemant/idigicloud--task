@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { routeData } from "constants/routesData";
+import routeData from "constants/routesData";
 import RenderRoutes from "renderRoutes";
-
+console.log(routeData);
 const App = () => (
   <div>
     <nav>

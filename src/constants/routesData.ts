@@ -80,3 +80,23 @@ export const routeData = [
   // component: "modules/UserModule/Login",
   // },
 ];
+
+const flattenArray: any = (arr: any) => {
+  let result: any = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i].routes)) {
+      result = result.concat(flattenArray(arr[i].routes));
+      delete arr[i].routes;
+      result.push(arr[i]);
+    } else {
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
+};
+
+const flatArray = flattenArray(routeData);
+
+export default flatArray;

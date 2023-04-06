@@ -26,7 +26,7 @@ const RenderRoutes = (routes: any) => (
       //       />
       //     );
       //   } else {
-      console.log(route.path);
+      //   console.log(route.path);
       return (
         <Route
           key={index}
