@@ -1,26 +1,24 @@
+import { useMemo } from "react";
 import { Outlet, Link } from "react-router-dom";
+import routeData from "constants/routesData";
 
 const Layout = () => {
+  const routesMemo = useMemo(() => routeData, []);
+  // console.log(routeData);
   return (
     <div>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home Page</Link>
-          </li>
-          <li>
-            <Link to="/user/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/analysis">Analysis</Link>
-          </li>
-        </ul>
+        <ol>
+          {routesMemo
+            .filter((item: any) => item.path !== "*")
+            .map((item: any, index: number) => {
+              return (
+                <li key={index}>
+                  <Link to={item.path}>{item?.name}</Link>
+                </li>
+              );
+            })}
+        </ol>
       </nav>
       <hr />
       <Outlet />

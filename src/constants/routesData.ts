@@ -1,4 +1,4 @@
-export const routeData = [
+const jsonData = [
   {
     name: "Home Page",
     locale: "Home.Page",
@@ -104,6 +104,6 @@ const flattenArray: any = (arr: any) => {
   return result;
 };
 
-const flatArray = flattenArray(routeData);
+const routeData = flattenArray(jsonData);
 
-export default flatArray;
+export default routeData;
