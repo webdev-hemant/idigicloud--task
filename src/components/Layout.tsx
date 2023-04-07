@@ -6,6 +6,9 @@ const Layout = () => {
       <nav>
         <ul>
           <li>
+            <Link to="/">Home Page</Link>
+          </li>
+          <li>
             <Link to="/user/login">Login</Link>
           </li>
           <li>
@@ -13,6 +16,9 @@ const Layout = () => {
           </li>
           <li>
             <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/analysis">Analysis</Link>
           </li>
         </ul>
       </nav>
