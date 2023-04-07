@@ -84,13 +84,12 @@ export const routeData = [
 const flattenArray: any = (arr: any) => {
   let result: any = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i].routes)) {
-      result = result.concat(flattenArray(arr[i].routes));
-      delete arr[i].routes;
-      result.push(arr[i]);
+  for (let item of arr) {
+    if (Array.isArray(item.routes)) {
+      const { routes, ...rest } = item;
+      result = [...result, ...flattenArray(routes), rest];
     } else {
-      result.push(arr[i]);
+      result = [...result, item];
     }
   }
 
