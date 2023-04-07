@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import routeData from "constants/routesData";
 import RenderRoutes from "renderRoutes";
-console.log(routeData);
+
 const App = () => (
   <div>
     <nav>
       <ul>
+        <li>
+          <Link to="/">Home Page</Link>
+        </li>
         <li>
           <Link to="/user/login">Login</Link>
         </li>

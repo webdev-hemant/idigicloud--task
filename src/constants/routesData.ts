@@ -1,5 +1,13 @@
 export const routeData = [
   {
+    name: "Home Page",
+    locale: "Home.Page",
+    path: "/",
+    component: "modules/HomeModule",
+    hideInMenu: true,
+    exact: true,
+  },
+  {
     name: "Login",
     locale: "user.login",
     path: "user/login",
@@ -75,10 +83,10 @@ export const routeData = [
       },
     ],
   },
-  // {
-  //   path: "*",
-  // component: "modules/UserModule/Login",
-  // },
+  {
+    path: "*",
+    component: "components/NoMatch.tsx",
+  },
 ];
 
 const flattenArray: any = (arr: any) => {
