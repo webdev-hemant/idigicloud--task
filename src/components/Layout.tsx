@@ -4,7 +4,6 @@ import routeData from "constants/routesData";
 
 const Layout = () => {
   const routesMemo = useMemo(() => routeData, []);
-  // console.log(routeData);
   return (
     <div>
       <nav>
