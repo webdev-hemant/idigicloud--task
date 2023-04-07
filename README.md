@@ -1,6 +1,6 @@
 ## This Project was made by Hemant Jadhav for interview purpose
 
-## live link :- https://idigicloud-task.vercel.app/
+## Deployed on vercel hosting platform. live link :- https://idigicloud-task.vercel.app/
 
 ## Tech stack of this project is React(CRA) + Typescript.
 
