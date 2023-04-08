@@ -21,24 +21,19 @@
     margin-top: 1rem;
     list-style: none;
     transition: all 0.5s;
+    .acitveRoute {
+      background-color: $color_3;
+      color: $color_2;
+    }
     li {
       cursor: pointer;
       padding: 10px 0 10px 2.5rem;
-      // background-color: green;
-      // .acitveRoute {
-      //   background-color: $color_3;
-      //   background-color: red;
-      // }
+      font-weight: 500;
+      font-size: 1rem;
+      white-space: nowrap;
+      text-transform: capitalize;
       &:hover {
-        background-color: $color_3;
-      }
-      a {
-        width: 100%;
-        height: 100%;
-        font-weight: 500;
-        font-size: 1rem;
-        color: $color_1;
-        white-space: nowrap;
+        background-color: rgba($color: $color_3, $alpha: 0.4);
       }
     }
   }

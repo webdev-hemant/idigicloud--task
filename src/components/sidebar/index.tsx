@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import routeData from "constants/routesData";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -43,9 +43,9 @@ const Sidebar = () => {
               />
               {routesMemo
                 .filter((item: any) => item.path !== "*")
-                .map((item: any) => (
+                .map((item: any, index: number) => (
                   <li
-                    key={item.name}
+                    key={index}
                     onClick={() => handleNavClick(item)}
                     className={styles.titleName}
                   >

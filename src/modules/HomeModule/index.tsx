@@ -15,6 +15,7 @@ const HomeModule = () => {
   return (
     <div>
       HomeModule
+      <h2>Counter: {state.count}</h2>
       <button onClick={handleIncrement}>Increment</button>
       <button onClick={handleDecrement}>Decrement</button>
     </div>

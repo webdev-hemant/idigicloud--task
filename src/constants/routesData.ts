@@ -10,7 +10,7 @@ const jsonData = [
   {
     name: "Login",
     locale: "user.login",
-    path: "user/login",
+    path: "/user/login",
     component: "modules/UserModule/Login",
     hideInMenu: true,
   },
