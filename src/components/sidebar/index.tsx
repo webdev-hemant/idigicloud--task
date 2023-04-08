@@ -3,8 +3,9 @@ import { Link, Outlet } from "react-router-dom";
 import routeData from "constants/routesData";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
-import styles from "./sidebar.module.scss";
 import OutsideClickHandler from "components/OutsideClickHandler";
+import CollapsableComponent from "components/CollapsableComponent";
+import styles from "./sidebar.module.scss";
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(true);
@@ -48,7 +49,7 @@ const Sidebar = () => {
                     onClick={() => handleNavClick(item)}
                     className={styles.titleName}
                   >
-                    <Link to={item.path}>{item.name}</Link>
+                    <CollapsableComponent title={item.name} list={routesMemo} />
                   </li>
                 ))}
             </ul>

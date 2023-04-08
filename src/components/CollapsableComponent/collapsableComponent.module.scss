@@ -1,0 +1,35 @@
+@import "styles/base.module.scss";
+
+.collapsableWrapper {
+  color: #fff;
+  .titleWrapper {
+    padding-left: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+    }
+    .arroIcon {
+      margin-right: 2rem;
+    }
+    .rotate {
+      transform: rotate(180deg);
+    }
+  }
+  .collapsList {
+    padding-left: 1rem;
+    list-style: none;
+    background-color: $color_3;
+    transition: all 0.5s;
+    li {
+      padding: 10px 0;
+      margin-left: 1rem;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #fff;
+      white-space: nowrap;
+    }
+  }
+}
