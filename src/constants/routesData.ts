@@ -98,7 +98,7 @@ const flattenArray: any = (arr: any) => {
   for (let item of arr) {
     if (Array.isArray(item.routes)) {
       const { routes, ...rest } = item;
-      result = [...result, ...flattenArray(routes), rest];
+      result = [...result, rest, ...flattenArray(routes)];
     } else {
       result = [...result, item];
     }

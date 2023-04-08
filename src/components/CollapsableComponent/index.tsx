@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import styles from "./collapsableComponent.module.scss";
 
@@ -27,7 +28,18 @@ const CollapsableComponent = ({
       {isCollapsed && (
         <ul className={styles.collapsList}>
           {list.map((item: any, index: number) => {
-            return <li>{item.name}</li>;
+            return (
+              <li>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive, isPending }) =>
+                    `${isPending ? "pending" : isActive ? styles.active : ""}`
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            );
           })}
         </ul>
       )}
