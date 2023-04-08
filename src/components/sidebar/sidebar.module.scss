@@ -1,0 +1,86 @@
+@import "styles/base.module.scss";
+
+.navWrapper {
+  .mobileNav {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    animation: all 0.5s ease-in;
+    background-color: $color_3;
+    &.navOpen {
+      background-color: #fff;
+    }
+    .hamBurger {
+      cursor: pointer;
+      animation: all 0.5s ease-in;
+      fill: #fff;
+    }
+    .crossIcon {
+      animation: all 0.5s ease-in;
+    }
+    .imgWrapper {
+      margin: 1rem 0;
+    }
+  }
+  .hiddenNavbarContainer {
+    width: 80vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 0.5s all;
+    background-color: $color_4;
+    @media screen and (min-width: 768px) {
+      width: 30vw;
+    }
+    &.width_0 {
+      width: 0;
+      & > ul {
+        display: none;
+      }
+    }
+    .crossIconWrapper {
+      width: 100%;
+      position: relative;
+      .crossIcon {
+        margin: 1.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        path {
+          fill: #fff;
+        }
+      }
+    }
+    .navListContainer {
+      background-color: $color_4;
+      padding: 5rem 0 1rem 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style: none;
+      position: relative;
+      .crossIcon {
+        cursor: pointer;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        path {
+          fill: $color_1;
+        }
+      }
+      .titleName {
+        a {
+          font-weight: 500;
+          font-size: 1.4rem;
+          cursor: pointer;
+          color: #fff;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

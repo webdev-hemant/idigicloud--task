@@ -105,6 +105,7 @@ const flattenArray: any = (arr: any) => {
   }
 
   return result;
+  // this is recursive funtion for getting all object routes into one array
 };
 
 const routeData = flattenArray(jsonData);
