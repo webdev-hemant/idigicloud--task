@@ -53,13 +53,14 @@ const jsonData = [
     locale: "projects",
     name: "Projects",
     icon: "projects",
-    component: "modules/UserModule/Login",
+    component: "modules/ProjectModule",
     redirect: "/projects/list", //Redirect /projects to
     ///projects/list
     routes: [
       {
         path: "/projects/list",
         locale: "projects.list",
+        component: "modules/ProjectModule/projectList",
         name: "Projects",
         icon: "projects",
         exact: true,
@@ -67,6 +68,7 @@ const jsonData = [
       {
         path: "/projects/:id",
         locale: "projects.details",
+        component: "modules/ProjectModule/projectId",
         name: "Project Details",
         hideInMenu: true,
         icon: "projects",
@@ -75,6 +77,7 @@ const jsonData = [
       },
       {
         path: "/projects/:id/settings",
+        component: "modules/ProjectModule/projectSetting",
         locale: "projects.settings",
         icon: "settings",
         name: "Settings",
