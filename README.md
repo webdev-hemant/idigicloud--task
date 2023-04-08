@@ -2,7 +2,7 @@
 
 ## Deployed on vercel hosting platform. live link :- https://idigicloud-task.vercel.app/
 
-## Tech stack of this project is React(CRA) + Typescript.
+## Tech stack of this project is React(CRA) + Typescript + SASS.
 
 ## Feature's of this project are :-
 
