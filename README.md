@@ -11,8 +11,7 @@
 3. Context-api for state management
 4. Good folder structure with absolute imports and fully responsive website.
 
-## Other packages and concepts
-
+## Other
 scss base file of color theme
 react-icons
 font-family Poppins
