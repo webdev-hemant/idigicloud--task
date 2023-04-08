@@ -1,13 +1,13 @@
 import { lazy, Suspense, useMemo } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import routeData from "constants/routesData";
-import Layout from "components/Layout";
+import Sidebar from "components/sidebar";
 
 const App = () => {
   const routesMemo = useMemo(() => routeData, []);
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Sidebar />}>
         {routesMemo.map((route: any, index: number) => {
           const Component = lazy(() => import(`${route.component}`));
 
