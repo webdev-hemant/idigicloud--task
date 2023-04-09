@@ -6,9 +6,11 @@ import { IJsonData } from "constants/routesData";
 
 const CollapsableComponent = ({
   title,
+  titlePath,
   list,
 }: {
   title: string | undefined;
+  titlePath: string;
   list: IJsonData[];
 }) => {
   const location = useLocation();
@@ -17,6 +19,10 @@ const CollapsableComponent = ({
   const [activePath, setactivePath] = useState(location.pathname);
 
   const toggleCollapsible = () => {
+    // if (titlePath) {
+    // } else {
+    // }
+    navigate(titlePath);
     setIsCollapsed(!isCollapsed);
   };
 

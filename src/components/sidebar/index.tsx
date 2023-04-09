@@ -55,6 +55,7 @@ const Sidebar = () => {
                   >
                     <CollapsableComponent
                       title={item.name}
+                      titlePath={item.path}
                       list={item.routes || []}
                     />
                   </li>
