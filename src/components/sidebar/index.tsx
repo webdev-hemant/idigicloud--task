@@ -1,6 +1,6 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import routeData, { IJsonData } from "constants/routesData";
+import { IJsonData } from "constants/routesData";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import OutsideClickHandler from "components/OutsideClickHandler";
@@ -13,8 +13,6 @@ const Sidebar = () => {
   const [showNav, setShowNav] = useState(true);
   const location = useLocation();
   const { sidebarState } = useContext(SidebarContext);
-  // const routesMemo = useMemo(() => routeData, []);
-  const handleNavClick = (item: any) => {};
 
   return (
     <>
@@ -48,11 +46,7 @@ const Sidebar = () => {
               {sidebarState
                 .filter((item: IJsonData) => item.path !== "*")
                 .map((item: IJsonData, index: number) => (
-                  <li
-                    key={index}
-                    onClick={() => handleNavClick(item)}
-                    className={styles.titleName}
-                  >
+                  <li key={index} className={styles.titleName}>
                     <CollapsableComponent
                       title={item.name}
                       titlePath={item.path}

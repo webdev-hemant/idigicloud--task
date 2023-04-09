@@ -109,8 +109,8 @@ const jsonData: IJsonData[] = [
 
 Object.freeze(jsonData);
 
-const flattenArray: any = (arr: any) => {
-  let result: any = [];
+const flattenArray = (arr: IJsonData[]) => {
+  let result: IJsonData[] = [];
 
   for (let item of arr) {
     if (Array.isArray(item.routes)) {

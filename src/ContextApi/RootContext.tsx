@@ -1,12 +1,12 @@
 import { createContext, useReducer } from "react";
-import { rootInitialState, rootReducer } from "./Reducers/rootReducer";
-
-interface Istate {
-  count: number;
-}
+import {
+  IrootReducerInitialState,
+  rootInitialState,
+  rootReducer,
+} from "./Reducers/rootReducer";
 
 interface ICtxInitialData {
-  state: Istate;
+  state: IrootReducerInitialState;
   dispatch: React.Dispatch<any>;
 }
 

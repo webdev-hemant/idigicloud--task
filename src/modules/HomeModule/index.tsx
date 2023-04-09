@@ -3,7 +3,7 @@ import { SidebarContext } from "ContextApi/SidebarNavContext";
 import React, { useContext } from "react";
 
 const HomeModule = () => {
-  const { state, dispatch } = useContext(RootContext);
+  const { dispatch } = useContext(RootContext);
   const { sidebarState, sideBarDispatch } = useContext(SidebarContext);
 
   const handleIncrement = () => {

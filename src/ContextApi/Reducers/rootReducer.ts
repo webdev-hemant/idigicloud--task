@@ -1,11 +1,16 @@
+interface IrootReducerInitialState {
+  count: number;
+}
+
 const rootInitialState = {
   count: 0,
 };
 
-const rootReducer = (state: any, action: any) => {
+const rootReducer = (
+  state: IrootReducerInitialState = rootInitialState,
+  action: any
+) => {
   switch (action.type) {
-    case "TEST":
-      return state;
     case "TEST":
       return state;
     default:
@@ -14,3 +19,4 @@ const rootReducer = (state: any, action: any) => {
 };
 
 export { rootInitialState, rootReducer };
+export type { IrootReducerInitialState };

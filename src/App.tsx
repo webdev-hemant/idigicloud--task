@@ -1,6 +1,6 @@
 import { lazy, Suspense, useMemo } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import routeData from "constants/routesData";
+import routeData, { IJsonData } from "constants/routesData";
 import Sidebar from "components/sidebar";
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Sidebar />}>
-        {routesMemo.map((route: any, index: number) => {
+        {routesMemo.map((route: IJsonData, index: number) => {
           const Component = lazy(() => import(`${route.component}`));
 
           return (
