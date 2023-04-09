@@ -97,7 +97,7 @@ const jsonData: IJsonData[] = [
         path: "/projects/list",
         locale: "projects.list",
         component: "modules/ProjectModule/projectList",
-        name: "Projects",
+        name: "All Projects",
         icon: MdChecklistRtl,
         exact: true,
       },
