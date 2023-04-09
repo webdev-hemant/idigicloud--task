@@ -1,4 +1,19 @@
-const jsonData = [
+export interface IJsonDate {
+  path: string;
+  component: string;
+  name?: string;
+  locale?: string;
+  hideInMenu?: boolean;
+  exact?: boolean;
+  redirect?: string;
+  icon?: any;
+  accessTO?: any;
+  key?: string;
+  parentKey?: string;
+  routes?: IJsonDate[];
+}
+
+const jsonData: IJsonDate[] = [
   {
     name: "Home Page",
     locale: "Home.Page",
@@ -92,6 +107,8 @@ const jsonData = [
   },
 ];
 
+Object.freeze(jsonData);
+
 const flattenArray: any = (arr: any) => {
   let result: any = [];
 
@@ -111,3 +128,4 @@ const flattenArray: any = (arr: any) => {
 const routeData = flattenArray(jsonData);
 
 export default routeData;
+export { jsonData };

@@ -1,17 +1,19 @@
 import { RootContext } from "ContextApi/RootContext";
+import { SidebarContext } from "ContextApi/SidebarNavContext";
 import React, { useContext } from "react";
 
 const HomeModule = () => {
   const { state, dispatch } = useContext(RootContext);
+  const { sidebarState, sideBarDispatch } = useContext(SidebarContext);
 
   const handleIncrement = () => {
-    dispatch({ type: "INCREMENT" });
+    sideBarDispatch({ type: "INCREMENT" });
+    console.log(sidebarState);
   };
 
   const handleDecrement = () => {
     dispatch({ type: "DECREMENT" });
   };
-
   return (
     <div>
       HomeModule
