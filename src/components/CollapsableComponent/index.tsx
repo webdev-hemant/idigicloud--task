@@ -4,26 +4,19 @@ import { IoIosArrowDown } from "react-icons/io";
 import styles from "./collapsableComponent.module.scss";
 import { IJsonData } from "constants/routesData";
 
-const CollapsableComponent = ({
-  title,
-  titlePath,
-  list,
-}: {
-  title: string | undefined;
-  titlePath: string;
-  list: IJsonData[];
-}) => {
+const CollapsableComponent = ({ routeDetail }: { routeDetail: IJsonData }) => {
+  const { routes, ...rest } = routeDetail;
   const location = useLocation();
   const navigate = useNavigate();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [activePath, setactivePath] = useState(location.pathname);
 
   const toggleCollapsible = () => {
-    // if (titlePath) {
-    // } else {
-    // }
-    navigate(titlePath);
-    setIsCollapsed(!isCollapsed);
+    if (routes) {
+      setIsCollapsed(!isCollapsed);
+    } else {
+      navigate(rest.path);
+    }
   };
 
   useEffect(() => {
@@ -33,8 +26,8 @@ const CollapsableComponent = ({
   return (
     <div className={styles.collapsableWrapper}>
       <div className={styles.titleWrapper} onClick={toggleCollapsible}>
-        <h3 className={styles.title}>{title}</h3>
-        {list.length ? (
+        <h3 className={styles.title}>{rest.name}</h3>
+        {routes?.length ? (
           <IoIosArrowDown
             className={`${styles.arroIcon} ${
               isCollapsed ? styles.rotate : null
@@ -43,9 +36,9 @@ const CollapsableComponent = ({
         ) : null}
       </div>
 
-      {list.length && isCollapsed ? (
+      {routes?.length && isCollapsed ? (
         <ul className={styles.collapsList}>
-          {list.map((item: IJsonData, index: number) => {
+          {[rest, ...routes].map((item: IJsonData, index: number) => {
             return (
               <li
                 key={index}

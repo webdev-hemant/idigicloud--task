@@ -47,11 +47,7 @@ const Sidebar = () => {
                 .filter((item: IJsonData) => item.path !== "*")
                 .map((item: IJsonData, index: number) => (
                   <li key={index} className={styles.titleName}>
-                    <CollapsableComponent
-                      title={item.name}
-                      titlePath={item.path}
-                      list={item.routes || []}
-                    />
+                    <CollapsableComponent routeDetail={item} />
                   </li>
                 ))}
             </ul>
