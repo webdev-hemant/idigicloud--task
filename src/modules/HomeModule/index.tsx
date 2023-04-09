@@ -7,19 +7,19 @@ const HomeModule = () => {
   const { sidebarState, sideBarDispatch } = useContext(SidebarContext);
 
   const handleIncrement = () => {
-    sideBarDispatch({ type: "INCREMENT" });
+    sideBarDispatch({ type: "TEST" });
     console.log(sidebarState);
   };
 
   const handleDecrement = () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch({ type: "TEST" });
   };
   return (
     <div>
       HomeModule
-      <h2>Counter: {state.count}</h2>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+      {/* <h2>Counter: {state.count}</h2> */}
+      <button onClick={handleIncrement}>TEST</button>
+      <button onClick={handleDecrement}>TEST</button>
     </div>
   );
 };

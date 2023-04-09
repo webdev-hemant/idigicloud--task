@@ -1,17 +1,19 @@
-import { useMemo, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import routeData from "constants/routesData";
+import routeData, { IJsonData } from "constants/routesData";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import OutsideClickHandler from "components/OutsideClickHandler";
 import CollapsableComponent from "components/CollapsableComponent";
 import Breadcrumbs from "components/BreadCrumbs";
 import styles from "./sidebar.module.scss";
+import { SidebarContext } from "ContextApi/SidebarNavContext";
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(true);
   const location = useLocation();
-  const routesMemo = useMemo(() => routeData, []);
+  const { sidebarState } = useContext(SidebarContext);
+  // const routesMemo = useMemo(() => routeData, []);
   const handleNavClick = (item: any) => {};
 
   return (
@@ -43,15 +45,18 @@ const Sidebar = () => {
                 style={{ width: "40px", height: "40px", stroke: "white" }}
                 className={styles.crossIcon}
               />
-              {routesMemo
-                .filter((item: any) => item.path !== "*")
-                .map((item: any, index: number) => (
+              {sidebarState
+                .filter((item: IJsonData) => item.path !== "*")
+                .map((item: IJsonData, index: number) => (
                   <li
                     key={index}
                     onClick={() => handleNavClick(item)}
                     className={styles.titleName}
                   >
-                    <CollapsableComponent title={item.name} list={routesMemo} />
+                    <CollapsableComponent
+                      title={item.name}
+                      list={item.routes || []}
+                    />
                   </li>
                 ))}
             </ul>

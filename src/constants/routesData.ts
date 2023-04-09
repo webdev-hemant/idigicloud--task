@@ -1,4 +1,4 @@
-export interface IJsonDate {
+export interface IJsonData {
   path: string;
   component: string;
   name?: string;
@@ -10,10 +10,10 @@ export interface IJsonDate {
   accessTO?: any;
   key?: string;
   parentKey?: string;
-  routes?: IJsonDate[];
+  routes?: IJsonData[];
 }
 
-const jsonData: IJsonDate[] = [
+const jsonData: IJsonData[] = [
   {
     name: "Home Page",
     locale: "Home.Page",

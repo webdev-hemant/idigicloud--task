@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import styles from "./collapsableComponent.module.scss";
+import { IJsonData } from "constants/routesData";
 
 const CollapsableComponent = ({
   title,
   list,
 }: {
-  title: string;
-  list: any[];
+  title: string | undefined;
+  list: IJsonData[];
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -27,14 +28,18 @@ const CollapsableComponent = ({
     <div className={styles.collapsableWrapper}>
       <div className={styles.titleWrapper} onClick={toggleCollapsible}>
         <h3 className={styles.title}>{title}</h3>
-        <IoIosArrowDown
-          className={`${styles.arroIcon} ${isCollapsed ? styles.rotate : null}`}
-        />
+        {list.length ? (
+          <IoIosArrowDown
+            className={`${styles.arroIcon} ${
+              isCollapsed ? styles.rotate : null
+            }`}
+          />
+        ) : null}
       </div>
 
-      {isCollapsed && (
+      {list.length && isCollapsed ? (
         <ul className={styles.collapsList}>
-          {list.map((item: any, index: number) => {
+          {list.map((item: IJsonData, index: number) => {
             return (
               <li
                 key={index}
@@ -48,7 +53,7 @@ const CollapsableComponent = ({
             );
           })}
         </ul>
-      )}
+      ) : null}
     </div>
   );
 };

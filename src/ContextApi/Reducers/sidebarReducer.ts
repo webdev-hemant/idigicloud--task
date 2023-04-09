@@ -1,16 +1,16 @@
 import {
-  IJsonDate,
+  IJsonData,
   jsonData as sidebarInitialState,
 } from "constants/routesData";
 
 const sidebarNavReducer = (
-  state: IJsonDate[] = sidebarInitialState,
+  state: IJsonData[] = sidebarInitialState,
   action: any
 ) => {
   switch (action.type) {
-    case "INCREMENT":
+    case "TEST":
       return state;
-    case "DECREMENT":
+    case "TEST":
       return state;
     default:
       return state;

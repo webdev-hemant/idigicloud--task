@@ -4,10 +4,10 @@ const rootInitialState = {
 
 const rootReducer = (state: any, action: any) => {
   switch (action.type) {
-    case "INCREMENT":
-      return { count: state.count + 1 };
-    case "DECREMENT":
-      return { count: state.count - 1 };
+    case "TEST":
+      return state;
+    case "TEST":
+      return state;
     default:
       return state;
   }

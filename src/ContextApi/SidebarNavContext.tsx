@@ -3,10 +3,10 @@ import {
   sidebarInitialState,
   sidebarNavReducer,
 } from "./Reducers/sidebarReducer";
-import { IJsonDate } from "constants/routesData";
+import { IJsonData } from "constants/routesData";
 
 interface ICtxInitialData {
-  sidebarState: IJsonDate[];
+  sidebarState: IJsonData[];
   sideBarDispatch: React.Dispatch<any>;
 }
 
