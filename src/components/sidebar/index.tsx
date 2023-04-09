@@ -1,14 +1,16 @@
 import { useMemo, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import routeData from "constants/routesData";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import OutsideClickHandler from "components/OutsideClickHandler";
 import CollapsableComponent from "components/CollapsableComponent";
+import Breadcrumbs from "components/BreadCrumbs";
 import styles from "./sidebar.module.scss";
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(true);
+  const location = useLocation();
   const routesMemo = useMemo(() => routeData, []);
   const handleNavClick = (item: any) => {};
 
@@ -57,6 +59,7 @@ const Sidebar = () => {
         </OutsideClickHandler>
       </nav>
       <main>
+        {location.pathname !== "/" ? <Breadcrumbs /> : null}
         <Outlet />
       </main>
     </>

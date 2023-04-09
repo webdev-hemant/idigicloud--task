@@ -10,8 +10,10 @@
 2. Lazy loading component in dynamic routing
 3. Context-api for state management
 4. Good folder structure with absolute imports and fully responsive website.
+5. Dynamic BreadCrumbs for location tracking and navigation.
 
 ## Other
+
 scss base file of color theme
 react-icons
 font-family Poppins
