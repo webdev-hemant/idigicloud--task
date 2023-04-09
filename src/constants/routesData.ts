@@ -1,3 +1,19 @@
+// import * as ReactIcons from "react-icons/all";
+import {
+  AiOutlineHome,
+  AiOutlineDashboard,
+  AiFillSetting,
+} from "react-icons/ai";
+import {
+  MdMonitorHeart,
+  MdChecklistRtl,
+  MdPlaylistAddCircle,
+} from "react-icons/md";
+import { FiLogIn } from "react-icons/fi";
+import { GoDashboard, GoProject } from "react-icons/go";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { SiSimpleanalytics } from "react-icons/si";
+
 export interface IJsonData {
   path: string;
   component: string;
@@ -19,6 +35,7 @@ const jsonData: IJsonData[] = [
     locale: "Home.Page",
     path: "/",
     component: "modules/HomeModule",
+    icon: AiOutlineHome,
     hideInMenu: true,
     exact: true,
   },
@@ -27,13 +44,14 @@ const jsonData: IJsonData[] = [
     locale: "user.login",
     path: "/user/login",
     component: "modules/UserModule/Login",
+    icon: FiLogIn,
     hideInMenu: true,
   },
   {
     path: "/dashboard",
     locale: "dashboard",
     name: "Dashboard",
-    icon: "dashboard",
+    icon: AiOutlineDashboard,
     exact: true, // This route will only work for /dashboard . For
     //dashboard/analysis or other this component will not be rendered
     component: "modules/DashboardModule",
@@ -44,6 +62,7 @@ const jsonData: IJsonData[] = [
         name: "analysis",
         component: "modules/DashboardModule/Analysis",
         exact: true,
+        icon: SiSimpleanalytics,
         accessTO: ["admin"], // Allow only admins to view this menu
         //and access this page
       },
@@ -52,6 +71,7 @@ const jsonData: IJsonData[] = [
         locale: "dashboard.monitor",
         component: "modules/DashboardModule/Monitor",
         name: "monitor",
+        icon: MdMonitorHeart,
         exact: true,
       },
       {
@@ -59,6 +79,7 @@ const jsonData: IJsonData[] = [
         locale: "dashboard.workplace",
         component: "modules/DashboardModule/Workplace",
         name: "workplace",
+        icon: BsPersonWorkspace,
         exact: true,
       },
     ],
@@ -67,7 +88,7 @@ const jsonData: IJsonData[] = [
     path: "/projects",
     locale: "projects",
     name: "Projects",
-    icon: "projects",
+    icon: GoProject,
     component: "modules/ProjectModule",
     redirect: "/projects/list", //Redirect /projects to
     ///projects/list
@@ -77,7 +98,7 @@ const jsonData: IJsonData[] = [
         locale: "projects.list",
         component: "modules/ProjectModule/projectList",
         name: "Projects",
-        icon: "projects",
+        icon: MdChecklistRtl,
         exact: true,
       },
       {
@@ -86,7 +107,7 @@ const jsonData: IJsonData[] = [
         component: "modules/ProjectModule/projectId",
         name: "Project Details",
         hideInMenu: true,
-        icon: "projects",
+        icon: MdPlaylistAddCircle,
         key: "projects",
         exact: true,
       },
@@ -94,7 +115,7 @@ const jsonData: IJsonData[] = [
         path: "/projects/:id/settings",
         component: "modules/ProjectModule/projectSetting",
         locale: "projects.settings",
-        icon: "settings",
+        icon: AiFillSetting,
         name: "Settings",
         parentKey: "details",
         exact: true,

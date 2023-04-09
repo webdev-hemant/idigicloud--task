@@ -26,7 +26,10 @@ const CollapsableComponent = ({ routeDetail }: { routeDetail: IJsonData }) => {
   return (
     <div className={styles.collapsableWrapper}>
       <div className={styles.titleWrapper} onClick={toggleCollapsible}>
-        <h3 className={styles.title}>{rest.name}</h3>
+        <h3 className={styles.title}>
+          {rest?.icon ? <rest.icon size={30} /> : null}
+          {rest.name}
+        </h3>
         {routes?.length ? (
           <IoIosArrowDown
             className={`${styles.arroIcon} ${
@@ -47,6 +50,7 @@ const CollapsableComponent = ({ routeDetail }: { routeDetail: IJsonData }) => {
                 }`}
                 onClick={() => navigate(item.path)}
               >
+                {item?.icon ? <item.icon size={22} /> : null}
                 {item.name}
               </li>
             );
