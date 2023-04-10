@@ -26,7 +26,11 @@ const CollapsableComponent = ({ routeDetail }: { routeDetail: IJsonData }) => {
   return (
     <div className={styles.collapsableWrapper}>
       <div className={styles.titleWrapper} onClick={toggleCollapsible}>
-        <h3 className={styles.title}>
+        <h3
+          className={`${styles.title} ${
+            routes?.length || (activePath === rest.path && styles.acitveRoute)
+          }`}
+        >
           {rest?.icon ? <rest.icon size={30} /> : null}
           {rest.name}
         </h3>
